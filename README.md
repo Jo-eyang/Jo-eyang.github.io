@@ -9,10 +9,8 @@ Personal academic website of **Jiayi Yang**, built on [al-folio](https://github.
 | Bio, research interests, photo caption | `_pages/about.md` |
 | Profile photo | `assets/img/prof_pic.jpg` (square image) |
 | News items | `_news/*.md` (one file per item) |
-| Publications | `_bibliography/papers.bib` (`selected={true}` shows it on the home page) |
-| Research / course projects | `_projects/*.md` |
-| HTML CV page | `_data/cv.yml` |
-| CV PDF | `assets/pdf/Jiayi_Yang_CV.pdf` |
+| Publications | `_bibliography/papers.bib` (`selected={true}` shows it on the home page; `preview=` points to a figure in `assets/img/publication_preview/`) |
+| CV PDF (the CV nav link opens it directly) | `assets/pdf/Jiayi_Yang_CV.pdf` |
 | Social links | `_data/socials.yml` |
 | Site-wide settings | `_config.yml` |
 | Custom styles | `_sass/_custom.scss` (colors are set in `assets/css/main.scss`) |

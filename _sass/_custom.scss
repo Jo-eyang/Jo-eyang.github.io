@@ -414,3 +414,66 @@ footer {
     gap: 0.7rem;
   }
 }
+
+/* ---------- Publication figures (wide main figures as thumbnails) ---------- */
+
+.publications ol.bibliography li {
+  .row > .abbr {
+    position: relative;
+
+    abbr.badge {
+      width: auto !important;
+      max-width: max-content; // beats Tailwind's layered .w-100 !important
+      position: absolute;
+      top: 0.45rem;
+      left: calc(15px + 0.45rem);
+      z-index: 1;
+      font-size: 0.7rem;
+      padding: 0.25rem 0.5rem;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+    }
+
+    .preview,
+    figure img,
+    picture img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      border: 1px solid var(--global-divider-color);
+      background: #fff;
+      box-shadow: none !important;
+    }
+
+    figure {
+      margin: 0;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .publications ol.bibliography li .row {
+    > .abbr {
+      flex: 0 0 34%;
+      max-width: 34%;
+    }
+
+    > .col-sm-8 {
+      flex: 0 0 66%;
+      max-width: 66%;
+    }
+  }
+}
+
+@media (max-width: 767.98px) {
+  .publications ol.bibliography li .row {
+    > .abbr,
+    > .col-sm-8 {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+
+    > .abbr {
+      margin-bottom: 0.75rem;
+    }
+  }
+}
