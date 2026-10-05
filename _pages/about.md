@@ -23,7 +23,7 @@ announcements:
   limit: 6
 ---
 
-Hi! I'm Jiayi, a senior undergraduate at **[NYU Shanghai](https://shanghai.nyu.edu/)** studying Computer Science, with minors in Mathematics and Business. I spent 2025–26 studying away at NYU in New York.
+Hi! I'm Jiayi, a senior undergraduate at **[NYU Shanghai](https://shanghai.nyu.edu/)** studying Computer Science, with minors in Mathematics and Business. I spent 2025–26 studying away in New York.
 
 I work with [Prof. Qiaoyu Tan](https://qiaoyu-tan.github.io/) on graph learning and multimodal foundation models, and with [Prof. Jinyang Li](https://jinyangli.github.io/) and Prof. Tan on LLM search agents.
 
