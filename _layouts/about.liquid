@@ -1,0 +1,89 @@
+---
+layout: default
+---
+{% comment %}
+  Site-local override of al_folio_core's about layout.
+  Two-column hero (profile card + bio), research-interest chips,
+  a compact news timeline, and selected publications.
+{% endcomment %}
+<div class="post home">
+  <section class="home-hero">
+    <aside class="home-card">
+      {% if page.profile.image %}
+        {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
+        <div class="home-photo">
+          {%
+            include figure.liquid loading="eager" path=profile_image_path class="img-fluid" sizes="240px" alt=page.profile.alt
+            cache_bust=true
+          %}
+        </div>
+      {% endif %}
+      <h1 class="home-name">
+        {{ site.first_name }}
+        {{ site.last_name }}
+      </h1>
+      {% if page.profile.role %}
+        <p class="home-role">{{ page.profile.role }}</p>
+      {% endif %}
+      {% if page.profile.affiliation %}
+        <p class="home-affil">{{ page.profile.affiliation }}</p>
+      {% endif %}
+      {% if page.social %}
+        <div class="home-social">{% social_links %}</div>
+      {% endif %}
+      {% if page.profile.email %}
+        <p class="home-email">
+          <i class="fa-solid fa-envelope"></i>
+          {{ page.profile.email }}
+        </p>
+      {% endif %}
+    </aside>
+
+    <div class="home-bio">
+      {{ content }}
+
+      {% if page.interests %}
+        <div class="home-interests">
+          {% for interest in page.interests %}
+            <span class="chip">{{ interest }}</span>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  </section>
+
+  <!-- News -->
+  {% if page.announcements and page.announcements.enabled and site.news != blank %}
+    <section class="home-section">
+      <h2 class="section-title">
+        <a href="{{ '/news/' | relative_url }}">News</a>
+      </h2>
+      <ul class="news-list">
+        {% assign news = site.news | reverse %}
+        {% for item in news limit: page.announcements.limit %}
+          <li>
+            <span class="news-date">{{ item.date | date: '%b %Y' }}</span>
+            <span class="news-text">
+              {%- if item.inline -%}
+                {{ item.content | remove: '<p>' | remove: '</p>' | emojify }}
+              {%- else -%}
+                <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+              {%- endif -%}
+            </span>
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
+  {% endif %}
+
+  <!-- Selected publications -->
+  {% if page.selected_papers %}
+    <section class="home-section">
+      <h2 class="section-title">
+        <a href="{{ '/publications/' | relative_url }}">Selected Publications</a>
+      </h2>
+      <p class="section-note">* denotes equal contribution.</p>
+      {% include selected_papers.liquid %}
+    </section>
+  {% endif %}
+</div>

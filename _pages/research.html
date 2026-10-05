@@ -1,0 +1,35 @@
+---
+layout: page
+title: research
+permalink: /research/
+description: Research projects and selected course projects.
+nav: true
+nav_order: 2
+sections:
+  - key: research
+    name: Research
+  - key: course
+    name: Course Projects
+---
+
+{% for section in page.sections %}
+{% assign items = site.projects | where: "category", section.key | sort: "importance" %}
+<h2 class="section-title">{{ section.name }}</h2>
+<div class="project-list">
+{% for project in items %}
+  <article class="project-item">
+    <div class="project-head">
+      <a class="project-title" href="{{ project.url | relative_url }}">{{ project.title }}</a>
+      {% if project.venue %}<span class="chip chip-sm">{{ project.venue }}</span>{% endif %}
+    </div>
+    <p class="project-meta">{{ project.period }}{% if project.advisor %} &middot; {{ project.advisor }}{% endif %}</p>
+    <p class="project-desc">{{ project.description }}</p>
+    {% if project.links %}
+    <div class="project-links">
+      {% for l in project.links %}<a href="{{ l.url }}">{{ l.name }}</a>{% endfor %}
+    </div>
+    {% endif %}
+  </article>
+{% endfor %}
+</div>
+{% endfor %}
