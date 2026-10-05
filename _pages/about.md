@@ -11,11 +11,9 @@ profile:
   email: jy4656 [at] nyu [dot] edu
 
 interests:
+  - Multi-Agent Learning
+  - Agentic AI
   - Graph Learning
-  - Agentic Systems
-  - Multi-Agent Coordination
-  - Generalization
-  - Vision-Language Models
 
 selected_papers: true # papers marked selected={true} in _bibliography/papers.bib
 social: true # social icons under the photo (configured in _data/socials.yml)
@@ -34,7 +32,7 @@ I'm interested in how intelligent systems can **combine complementary and incomp
 Some questions I have recently worked on:
 
 - **Can one model learn across graphs with different modalities?** In [OMG-VLM](https://arxiv.org/abs/2607.19128) (EMNLP 2026), we use a single vision-language model as a shared backbone to learn over text-, image-, and multimodal-attributed graphs.
-- **When does collaboration between specialized agents help in graph learning?** In [GraphMAS](https://arxiv.org/abs/2609.39777) (under review), we study how LLM agents with complementary graph views should coordinate, and find that adaptively choosing which specialists to consult matters more than having them communicate more.
+- **When does collaboration between specialized agents help in graph learning?** In [GraphMAS](https://arxiv.org/abs/2609.39777) (under review), we study how LLM agents with complementary graph views should coordinate.
 - **Can agents generalize across different forms of search?** We are developing agents that operate across both retrieval-based question answering and long-horizon deep search.
 
 <p class="callout">I am applying to Ph.D. programs in Computer Science for <strong>Fall 2027</strong>.</p>
